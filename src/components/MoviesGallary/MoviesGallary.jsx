@@ -6,6 +6,7 @@ import {
   MovieTitle,
   MovieLink,
 } from './MoviesGallary.styled';
+import PropTypes from 'prop-types';
 
 const MoviesGallary = ({ movies }) => {
   const location = useLocation();
@@ -25,4 +26,15 @@ const MoviesGallary = ({ movies }) => {
     </PopularMovieList>
   );
 };
+
+MoviesGallary.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      original_title: PropTypes.string,
+      poster_path: PropTypes.string,
+    })
+  ),
+};
+
 export default MoviesGallary;

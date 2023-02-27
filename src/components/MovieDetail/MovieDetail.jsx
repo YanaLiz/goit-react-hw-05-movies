@@ -10,6 +10,7 @@ import {
   MovieInfoH,
 } from './MovieDetail.styled';
 
+
 const MovieDetail = ({ movies, backLinkHref }) => {
   const userScore = (Number(movies.vote_average) * 10).toFixed(2);
 
@@ -48,4 +49,6 @@ const MovieDetail = ({ movies, backLinkHref }) => {
     </>
   );
 };
+
+
 export default MovieDetail;

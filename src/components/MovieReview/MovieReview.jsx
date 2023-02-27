@@ -1,4 +1,6 @@
+
 import { ReviewList, ReviewItem, ReviewAuthor } from './MovieReview.styled';
+
 const MovieReview = ({ movies }) => {
   <ReviewList>
     {movies.map(({ id, author, content }) => (
@@ -9,4 +11,7 @@ const MovieReview = ({ movies }) => {
     ))}
   </ReviewList>;
 };
+
+
+
 export default MovieReview;

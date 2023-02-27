@@ -5,6 +5,7 @@ import {
   CastNameList,
   CastNameItem,
 } from './MovieActors.styled';
+import PropTypes from 'prop-types'
 
 const MovieActors = ({ movies }) => {
   return (
@@ -24,4 +25,16 @@ const MovieActors = ({ movies }) => {
     </CastList>
   );
 };
+
+MovieActors.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      original_name: PropTypes.string,
+      profile_path: PropTypes.string,
+      id: PropTypes.number.isRequired,
+      character: PropTypes.string,
+    })
+  ),
+};
+
 export default MovieActors;
