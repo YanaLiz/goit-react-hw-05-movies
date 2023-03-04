@@ -8,6 +8,7 @@ export const findMovies = async () => {
   return await axios
     .get(`${URL}trending/movie/day?api_key=${API_KEY}`)
     .then(response => response.data.results);
+  
 };
 
 export const getId = async id => {

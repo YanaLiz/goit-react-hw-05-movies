@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { ImSearch } from 'react-icons/im';
 import { toast } from 'react-toastify';
@@ -18,11 +18,25 @@ const Movies = () => {
   const [movieArr, setMovieArr] = useState([]);
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+   
+
+  useEffect(() => {
+    if (!query) {
+      return;
+
+    }
+  })
 
   async function fetchToSearch() {
     try {
       setIsLoading(true);
       const r = await findQuery(query);
+      const movieArr = r.map(({ id, name, title }) => ({
+        id,
+        name,
+        title,
+      }));
+      setMovieArr(movieArr)
       if (r.length > 0) {
         return setMovieArr(r);
       } else {
@@ -47,7 +61,7 @@ const Movies = () => {
       toast.error('Please enter some world');
       return;
     }
-    fetchToSearch();
+    fetchToSearch(query);
     query = '';
   };
 

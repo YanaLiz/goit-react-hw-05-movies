@@ -6,10 +6,11 @@ const useMovieSearch = (apiFunction, id) => {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
+
   useEffect(() => {
     async function fetchToSearch() {
       try {
-        setIsLoading(true);
+        setIsLoading(false);
         const r = await apiFunction(id);
         setMovieArr(r);
       } catch (error) {

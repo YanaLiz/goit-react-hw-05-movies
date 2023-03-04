@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 import { findReviews } from 'API/moviesSearchApi';
 import Container from 'components/Container';
 import MovieReview from 'components/MovieReview';
@@ -17,6 +17,7 @@ const MoviesDetails = () => {
       ) : (
         <NoReview> There are no reviews for this film.</NoReview>
       )}
+      <Outlet/>
     </Container>
   );
 };
