@@ -9,15 +9,20 @@ const MoviesDetails = () => {
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
 
+
+
+
   const popularMovies = useMovieSearch(getId, id);
   const { movieArr, error, isLoading } = popularMovies;
 
   return (
     <main>
       <Container isLoading={isLoading} error={error} movieArr={movieArr}>
+        
         {movieArr.length !== 0 && (
           <MovieDetail movies={movieArr} backLinkHref={backLinkHref} />
         )}
+       
       </Container>
     </main>
   );

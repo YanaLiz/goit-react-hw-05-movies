@@ -10,7 +10,6 @@ import {
   MovieInfoH,
 } from './MovieDetail.styled';
 
-
 const MovieDetail = ({ movies, backLinkHref }) => {
   const userScore = (Number(movies.vote_average) * 10).toFixed(2);
 
@@ -41,8 +40,12 @@ const MovieDetail = ({ movies, backLinkHref }) => {
         </MovieInfoContainer>
 
         <ul>
-          <InfoNavLinkStyled to={`cast`}>Cast</InfoNavLinkStyled>
-          <InfoNavLinkStyled to={`reviews`}>Reviews</InfoNavLinkStyled>
+          <InfoNavLinkStyled to="cast" state={{ from: backLinkHref }}>
+            Cast
+          </InfoNavLinkStyled>
+          <InfoNavLinkStyled to="reviews" state={{ from: backLinkHref }}>
+            Reviews
+          </InfoNavLinkStyled>
         </ul>
       </MovieSection>
       <Outlet />
@@ -50,5 +53,5 @@ const MovieDetail = ({ movies, backLinkHref }) => {
   );
 };
 
-
 export default MovieDetail;
+

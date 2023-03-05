@@ -6,6 +6,7 @@ const AppBar = () => {
       <nav>
         <NavLinkStyled to="/">Home</NavLinkStyled>
         <NavLinkStyled to="/movies">Movies</NavLinkStyled>
+       
       </nav>
     </AppBarHeader>
   );
